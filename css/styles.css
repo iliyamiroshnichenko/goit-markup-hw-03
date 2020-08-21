@@ -22,6 +22,8 @@ body {
 }
 /* Убрал флажки у элементов списков */
 .list {
+  padding: 0;
+  margin: 0;
   list-style: none;
 }
 
@@ -67,20 +69,31 @@ body {
 }
 /* фон героя */
 .hero {
+  padding-top: 200px;
+  padding-bottom: 200px;
+  margin-bottom: 94px;
   background-color: var(--third-bg-color);
+  text-align: center;
 }
 /* Заголовок героя */
 .hero-title {
+  margin-top: 0;
+  margin-bottom: 30px;
+
   color: var(--main-bg-color);
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
-  text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 /* кнопка героя */
 .button.primary {
+  display: inline-block;
+  min-width: 200px;
+  padding: 10px 32px;
+  border-radius: 4px;
+
   color: var(--main-bg-color);
   background-color: var(--accent-color);
   font-weight: 700;
@@ -89,40 +102,63 @@ body {
   text-align: center;
   letter-spacing: 0.06em;
 }
+
 /* Заголовки h3 секции преимущества */
 .feature .title {
+  margin-top: 0;
+  margin-bottom: 10px;
   font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
 }
 /* Текст секции преимущества */
 .feature .text {
+  margin-top: 0;
+  margin-bottom: 0;
   color: var(--second-text-color);
 }
 /* Заголовки секций */
 .section-title {
+  margin-top: 0;
+  margin-bottom: 50px;
   font-size: 36px;
   line-height: 1.17;
   text-align: center;
 }
-/* Доп фон секции Наша команда  */
-.team {
+/* оформление последней секции  */
+.section:last-child {
+  padding-top: 94px;
+  padding-bottom: 94px;
   background-color: var(--secohd-bg-color);
+  text-align: center;
+}
+/* всем кроме последней секции задаем нижний марджин */
+.section:not(:last-child) {
+  margin-bottom: 94px;
+}
+.team-list .item {
+  padding-bottom: 30px;
 }
 /* Заголовки h3 Наша команда */
 .team-list .title {
+  margin-top: 30px;
+  margin-bottom: 10px;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
 }
 /* Текст секции Наша команда */
 .team-list .text {
+  margin-top: 0;
+  margin-bottom: 0;
   color: var(--second-text-color);
   font-size: 16px;
   line-height: 1.19;
 }
 /* фон футера */
 .footer {
+  padding-top: 60px;
+  padding-bottom: 60px;
   background-color: var(--third-bg-color);
 }
 /* лого футера */
@@ -155,6 +191,10 @@ body {
 
 /* Кнопки*/
 .button.secondary {
+  display: inline-block;
+  min-width: 73px;
+  padding: 6px 22px;
+  border-radius: 4px;
   color: var(--main-text-color);
   background-color: var(--secohd-bg-color);
   font-family: inherit;
@@ -169,8 +209,23 @@ body {
   color: var(--main-bg-color);
   background-color: var(--accent-color);
 }
+.portfolio {
+  margin-top: 94px;
+  margin-bottom: 94px;
+}
+.portfolio-nav {
+  margin-bottom: 34px;
+  padding-bottom: 16px;
+}
+
+.portfolio-list .item {
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
 /* Цвет заголовков */
 .portfolio-list .title {
+  margin-top: 20px;
+  margin-bottom: 4px;
   color: var(--main-text-color);
   font-size: 18px;
   line-height: 2;
@@ -178,7 +233,22 @@ body {
 }
 /*Цвет текста */
 .portfolio-list .text {
+  margin-top: 0;
+  margin-bottom: 0;
   color: var(--second-text-color);
   font-size: 16px;
   line-height: 1.87;
+}
+
+/* Геометрия контейнера */
+.container {
+  width: 1200px;
+  margin: 0px auto;
+  padding: 0px 15px;
+  outline: 2px solid orange;
+}
+/* Временно уберем марджины у заголовка секции Преимущества */
+.hidden {
+  margin-top: 0;
+  margin-bottom: 0;
 }
