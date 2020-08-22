@@ -72,6 +72,7 @@ body {
   padding-top: 200px;
   padding-bottom: 200px;
   margin-bottom: 94px;
+
   background-color: var(--third-bg-color);
   text-align: center;
 }
@@ -169,16 +170,20 @@ body {
   font-size: 26px;
   line-height: 1.19;
 }
-/* уберем курсив в адресе футера */
+/* адрес футера */
 .footer-address {
+  margin-top: 20px;
   font-style: normal;
 }
 /* Физический адрес в футере */
 .footer-address .text {
+  margin: 0;
   color: var(--main-bg-color);
 }
 /* почта и телефон футера */
 .footer-address .link {
+  display: inline-block;
+  margin-top: 9px;
   color: rgba(255, 255, 255, 0.6);
 }
 /* акцент для почты и телефона в футере */
@@ -194,7 +199,9 @@ body {
   display: inline-block;
   min-width: 73px;
   padding: 6px 22px;
+  border: 1px solid transparent;
   border-radius: 4px;
+
   color: var(--main-text-color);
   background-color: var(--secohd-bg-color);
   font-family: inherit;
@@ -222,6 +229,10 @@ body {
   padding-bottom: 20px;
   margin-bottom: 30px;
 }
+.portfolio-list .item:last-child {
+  margin-bottom: 0;
+}
+
 /* Цвет заголовков */
 .portfolio-list .title {
   margin-top: 20px;
@@ -233,8 +244,7 @@ body {
 }
 /*Цвет текста */
 .portfolio-list .text {
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0;
   color: var(--second-text-color);
   font-size: 16px;
   line-height: 1.87;
@@ -247,7 +257,7 @@ body {
   padding: 0px 15px;
   outline: 2px solid orange;
 }
-/* Временно уберем марджины у заголовка секции Преимущества */
+/* Временно уберем марджины у скрытых заголовка */
 .hidden {
   margin-top: 0;
   margin-bottom: 0;
