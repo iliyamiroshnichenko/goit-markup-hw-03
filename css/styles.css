@@ -20,7 +20,7 @@ body {
 .link {
   text-decoration: none;
 }
-/* Убрал флажки у элементов списков */
+/* Убрал флажки и отступы у элементов списков */
 .list {
   padding: 0;
   margin: 0;
@@ -34,8 +34,19 @@ body {
   line-height: 1.14;
   letter-spacing: 0.02em;
 }
+/* весь хэдер в одну строку */
+.header-flex {
+  display: flex;
+  align-items: center;
+}
+/* логотип и навигацию в одну строку */
+.nav-flex {
+  display: flex;
+  align-items: center;
+}
 /* логотип хэдера */
 .header-logo {
+  margin-right: 93px;
   color: #000000;
   font-family: "Raleway", sans-serif;
   font-weight: 700;
@@ -43,8 +54,20 @@ body {
   line-height: 1.19;
   letter-spacing: 0.03em;
 }
-/* текст основной навигации хэдера */
+/* элементы навигации в строку */
+.nav-main {
+  display: flex;
+}
+/* все кроме последнего элепента навигации */
+.nav-main > .item:not(:last-child) {
+  margin-right: 50px;
+}
+/* основная навигация хэдера */
 .nav-main .link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
   color: inherit;
 }
 /* Выделение активной страницы хэдера + Web в логотипе */
@@ -58,8 +81,21 @@ body {
 .nav-main .link:focus {
   color: var(--accent-color);
 }
-/* цвет текста инфо части навигации */
+/* телефон и почту хэдера в строку */
+.header-info {
+  display: flex;
+  margin-left: auto;
+}
+/* все кроме последнего элемента списка header-info*/
+.header-info .item:not(:last-child) {
+  margin-right: 50px;
+}
+/* инфо часть навигации */
 .header-info .link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
   color: var(--second-text-color);
 }
 /* цвет текста инфо части навигации при акценте */
@@ -67,7 +103,7 @@ body {
 .header-info .link:focus {
   color: var(--accent-color);
 }
-/* фон героя */
+/* герой */
 .hero {
   padding-top: 200px;
   padding-bottom: 200px;
@@ -103,11 +139,24 @@ body {
   text-align: center;
   letter-spacing: 0.06em;
 }
+/* список преимуществ в строку */
+.feature {
+  display: flex;
+}
+/* наполнение контейнера преимуществ */
+.feature .item {
+  flex-basis: calc((100% - 3 * 30px) / 4);
+}
+/* отступы всем кроме последнего элемента списка перимуществ */
+.feature .item:not(:last-child) {
+  margin-right: 30px;
+}
 
 /* Заголовки h3 секции преимущества */
 .feature .title {
   margin-top: 0;
   margin-bottom: 10px;
+
   font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
@@ -116,12 +165,14 @@ body {
 .feature .text {
   margin-top: 0;
   margin-bottom: 0;
+
   color: var(--second-text-color);
 }
 /* Заголовки секций */
 .section-title {
   margin-top: 0;
   margin-bottom: 50px;
+
   font-size: 36px;
   line-height: 1.17;
   text-align: center;
@@ -130,6 +181,7 @@ body {
 .section:last-child {
   padding-top: 94px;
   padding-bottom: 94px;
+
   background-color: var(--secohd-bg-color);
   text-align: center;
 }
@@ -137,13 +189,35 @@ body {
 .section:not(:last-child) {
   margin-bottom: 94px;
 }
+/* список примеров работ в строку */
+.examples-list {
+  display: flex;
+}
+/* отступы всем проме последнего элемента списка */
+.examples-list .item:not(:last-child) {
+  margin-right: 30px;
+}
+/* список команды */
+.team-list {
+  display: flex;
+}
+/* элементы списка наша команда */
 .team-list .item {
+  flex-basis: calc((100% - 3 * 30px) / 4);
   padding-bottom: 30px;
+  border-radius: 0px 0px 4px 4px;
+
+  background-color: var(--main-bg-color);
+}
+/*отступ всем кроме последнего элемента списка */
+.team-list .item:not(:last-child) {
+  margin-right: 30px;
 }
 /* Заголовки h3 Наша команда */
 .team-list .title {
   margin-top: 30px;
   margin-bottom: 10px;
+
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
@@ -152,14 +226,16 @@ body {
 .team-list .text {
   margin-top: 0;
   margin-bottom: 0;
+
   color: var(--second-text-color);
   font-size: 16px;
   line-height: 1.19;
 }
-/* фон футера */
+/* футер */
 .footer {
   padding-top: 60px;
   padding-bottom: 60px;
+
   background-color: var(--third-bg-color);
 }
 /* лого футера */
@@ -173,17 +249,20 @@ body {
 /* адрес футера */
 .footer-address {
   margin-top: 20px;
+
   font-style: normal;
 }
 /* Физический адрес в футере */
 .footer-address .text {
   margin: 0;
+
   color: var(--main-bg-color);
 }
 /* почта и телефон футера */
 .footer-address .link {
   display: inline-block;
   margin-top: 9px;
+
   color: rgba(255, 255, 255, 0.6);
 }
 /* акцент для почты и телефона в футере */
@@ -193,6 +272,19 @@ body {
 }
 
 /* Страница Портфолио */
+
+/* отступы основного блока портфолио */
+.portfolio {
+  margin-top: 94px;
+  margin-bottom: 94px;
+}
+/* список кнопок навигации портфолио */
+.portfolio-nav {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 34px;
+  padding-bottom: 16px;
+}
 
 /* Кнопки*/
 .button.secondary {
@@ -216,35 +308,44 @@ body {
   color: var(--main-bg-color);
   background-color: var(--accent-color);
 }
-.portfolio {
-  margin-top: 94px;
-  margin-bottom: 94px;
+/* отступ у всех кнпопок кроме последней */
+.portfolio-nav .item:not(:last-child) {
+  margin-right: 8px;
 }
-.portfolio-nav {
-  margin-bottom: 34px;
-  padding-bottom: 16px;
+/* список основных элементов страницы */
+.portfolio-list {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .portfolio-list .item {
-  padding-bottom: 20px;
+  width: calc((100% - 2 * 30px) / 3);
+  margin-right: 30px;
   margin-bottom: 30px;
+  padding-bottom: 20px;
+  border: 1px solid #eeeeee;
+  box-sizing: border-box;
 }
-.portfolio-list .item:last-child {
+.portfolio-list .item:nth-child(3n) {
+  margin-right: 0;
+}
+
+.portfolio-list .item:nth-last-child(-n + 3) {
   margin-bottom: 0;
 }
 
-/* Цвет заголовков */
+/* заголовки элементов портфолио */
 .portfolio-list .title {
-  margin-top: 20px;
-  margin-bottom: 4px;
+  margin: 20px 0 4px 24px;
   color: var(--main-text-color);
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
 }
-/*Цвет текста */
+/* текст элементов портфолио */
 .portfolio-list .text {
-  margin: 0;
+  margin: 0 0 0 24px;
+
   color: var(--second-text-color);
   font-size: 16px;
   line-height: 1.87;
@@ -255,7 +356,7 @@ body {
   width: 1200px;
   margin: 0px auto;
   padding: 0px 15px;
-  outline: 2px solid orange;
+  /* outline: 2px solid orange; */
 }
 /* Временно уберем марджины у скрытых заголовка */
 .hidden {
