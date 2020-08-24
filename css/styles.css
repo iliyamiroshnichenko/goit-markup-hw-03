@@ -107,7 +107,6 @@ body {
 .hero {
   padding-top: 200px;
   padding-bottom: 200px;
-  margin-bottom: 94px;
 
   background-color: var(--third-bg-color);
   text-align: center;
@@ -138,6 +137,9 @@ body {
   line-height: 1.87;
   text-align: center;
   letter-spacing: 0.06em;
+}
+.section-feature {
+  padding-top: 94px;
 }
 /* список преимуществ в строку */
 .feature {
@@ -177,17 +179,16 @@ body {
   line-height: 1.17;
   text-align: center;
 }
-/* оформление последней секции  */
-.section:last-child {
+/* паддинг всем секциям */
+.section {
   padding-top: 94px;
   padding-bottom: 94px;
+}
 
+/* оформление последней секции  */
+.section:last-child {
   background-color: var(--secohd-bg-color);
   text-align: center;
-}
-/* всем кроме последней секции задаем нижний марджин */
-.section:not(:last-child) {
-  margin-bottom: 94px;
 }
 /* список примеров работ в строку */
 .examples-list {
@@ -286,8 +287,8 @@ body {
 
 /* отступы основного блока портфолио */
 .portfolio {
-  margin-top: 94px;
-  margin-bottom: 94px;
+  padding-top: 94px;
+  padding-bottom: 94px;
 }
 /* список кнопок навигации портфолио */
 .portfolio-nav {
@@ -349,7 +350,8 @@ body {
 }
 /* заголовки элементов портфолио */
 .portfolio-list .title {
-  margin: 20px 24px 4px 24px;
+  padding: 20px 24px 4px 24px;
+  margin: 0;
   color: var(--main-text-color);
   font-size: 18px;
   line-height: 2;
@@ -357,7 +359,8 @@ body {
 }
 /* текст элементов портфолио */
 .portfolio-list .text {
-  margin: 0 24px;
+  padding: 0 24px;
+  margin: 0;
 
   color: var(--second-text-color);
   font-size: 16px;
