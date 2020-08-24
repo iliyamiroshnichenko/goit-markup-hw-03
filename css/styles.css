@@ -193,9 +193,16 @@ body {
 .examples-list {
   display: flex;
 }
+.examples-list .item {
+  flex-basis: calc((100% - 2 * 30px) / 3);
+}
 /* отступы всем проме последнего элемента списка */
 .examples-list .item:not(:last-child) {
   margin-right: 30px;
+}
+/* уберем лишние пиксели внизу у картинок */
+.examples-list .item > img {
+  display: block;
 }
 /* список команды */
 .team-list {
@@ -212,6 +219,10 @@ body {
 /*отступ всем кроме последнего элемента списка */
 .team-list .item:not(:last-child) {
   margin-right: 30px;
+}
+/* уберем лишние пиксели внизу у картинок */
+.team-list .item > img {
+  display: block;
 }
 /* Заголовки h3 Наша команда */
 .team-list .title {
@@ -285,7 +296,10 @@ body {
   margin-bottom: 34px;
   padding-bottom: 16px;
 }
-
+/* отступ у всех кнпопок кроме последней */
+.portfolio-nav .item:not(:last-child) {
+  margin-right: 8px;
+}
 /* Кнопки*/
 .button.secondary {
   display: inline-block;
@@ -308,35 +322,34 @@ body {
   color: var(--main-bg-color);
   background-color: var(--accent-color);
 }
-/* отступ у всех кнпопок кроме последней */
-.portfolio-nav .item:not(:last-child) {
-  margin-right: 8px;
-}
 /* список основных элементов страницы */
 .portfolio-list {
   display: flex;
   flex-wrap: wrap;
 }
-
+/* основные элементы страницы портфолио */
 .portfolio-list .item {
   width: calc((100% - 2 * 30px) / 3);
   margin-right: 30px;
   margin-bottom: 30px;
   padding-bottom: 20px;
   border: 1px solid #eeeeee;
-  box-sizing: border-box;
 }
+/* каждому третьему убираем правый марджин */
 .portfolio-list .item:nth-child(3n) {
   margin-right: 0;
 }
-
+/* последним трем убираем нижний марджин */
 .portfolio-list .item:nth-last-child(-n + 3) {
   margin-bottom: 0;
 }
-
+/* уберем лишние пиксели внизу у картинок */
+.portfolio-list .link > img {
+  display: block;
+}
 /* заголовки элементов портфолио */
 .portfolio-list .title {
-  margin: 20px 0 4px 24px;
+  margin: 20px 24px 4px 24px;
   color: var(--main-text-color);
   font-size: 18px;
   line-height: 2;
@@ -344,7 +357,7 @@ body {
 }
 /* текст элементов портфолио */
 .portfolio-list .text {
-  margin: 0 0 0 24px;
+  margin: 0 24px;
 
   color: var(--second-text-color);
   font-size: 16px;
@@ -356,10 +369,11 @@ body {
   width: 1200px;
   margin: 0px auto;
   padding: 0px 15px;
-  /* outline: 2px solid orange; */
+  outline: 2px solid orange;
 }
 /* Временно уберем марджины у скрытых заголовка */
 .hidden {
+  display: none;
   margin-top: 0;
   margin-bottom: 0;
 }
