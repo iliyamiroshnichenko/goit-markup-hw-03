@@ -16,6 +16,12 @@ body {
   line-height: 1.71;
   letter-spacing: 0.03em;
 }
+/* базовые настройки картинок */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 /* Уберу подчеркивание у всех ссылок */
 .link {
   text-decoration: none;
@@ -33,6 +39,13 @@ body {
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
+}
+/* Геометрия контейнера */
+.container {
+  width: 1200px;
+  margin: 0px auto;
+  padding: 0px 15px;
+  /* outline: 2px solid orange; */
 }
 /* весь хэдер в одну строку */
 .header-flex {
@@ -58,7 +71,7 @@ body {
 .nav-main {
   display: flex;
 }
-/* все кроме последнего элепента навигации */
+/* отступ всем кроме последнего элепента навигации */
 .nav-main > .item:not(:last-child) {
   margin-right: 50px;
 }
@@ -86,7 +99,7 @@ body {
   display: flex;
   margin-left: auto;
 }
-/* все кроме последнего элемента списка header-info*/
+/* отступ всем кроме последнего элемента списка header-info*/
 .header-info .item:not(:last-child) {
   margin-right: 50px;
 }
@@ -138,24 +151,30 @@ body {
   text-align: center;
   letter-spacing: 0.06em;
 }
-.section-feature {
+/* отступы секции преимуществ */
+.section.feature {
   padding-top: 94px;
+  padding-bottom: 0;
+}
+/* Временно cпрячем и уберем марджины у скрытых заголовка */
+.hidden {
+  display: none;
+  margin: 0;
 }
 /* список преимуществ в строку */
-.feature {
+.feature-list {
   display: flex;
 }
 /* наполнение контейнера преимуществ */
-.feature .item {
+.feature-list .item {
   flex-basis: calc((100% - 3 * 30px) / 4);
 }
 /* отступы всем кроме последнего элемента списка перимуществ */
-.feature .item:not(:last-child) {
+.feature-list .item:not(:last-child) {
   margin-right: 30px;
 }
-
 /* Заголовки h3 секции преимущества */
-.feature .title {
+.feature-list .title {
   margin-top: 0;
   margin-bottom: 10px;
 
@@ -164,11 +183,16 @@ body {
   text-transform: uppercase;
 }
 /* Текст секции преимущества */
-.feature .text {
+.feature-list .text {
   margin-top: 0;
   margin-bottom: 0;
 
   color: var(--second-text-color);
+}
+/* паддинг всем секциям */
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
 }
 /* Заголовки секций */
 .section-title {
@@ -179,21 +203,11 @@ body {
   line-height: 1.17;
   text-align: center;
 }
-/* паддинг всем секциям */
-.section {
-  padding-top: 94px;
-  padding-bottom: 94px;
-}
-
-/* оформление последней секции  */
-.section:last-child {
-  background-color: var(--secohd-bg-color);
-  text-align: center;
-}
 /* список примеров работ в строку */
 .examples-list {
   display: flex;
 }
+/* ширина контента секкции */
 .examples-list .item {
   flex-basis: calc((100% - 2 * 30px) / 3);
 }
@@ -201,9 +215,10 @@ body {
 .examples-list .item:not(:last-child) {
   margin-right: 30px;
 }
-/* уберем лишние пиксели внизу у картинок */
-.examples-list .item > img {
-  display: block;
+/* оформление секции команда  */
+.section.team {
+  background-color: var(--secohd-bg-color);
+  text-align: center;
 }
 /* список команды */
 .team-list {
@@ -220,10 +235,6 @@ body {
 /*отступ всем кроме последнего элемента списка */
 .team-list .item:not(:last-child) {
   margin-right: 30px;
-}
-/* уберем лишние пиксели внизу у картинок */
-.team-list .item > img {
-  display: block;
 }
 /* Заголовки h3 Наша команда */
 .team-list .title {
@@ -285,17 +296,11 @@ body {
 
 /* Страница Портфолио */
 
-/* отступы основного блока портфолио */
-.portfolio {
-  padding-top: 94px;
-  padding-bottom: 94px;
-}
 /* список кнопок навигации портфолио */
 .portfolio-nav {
   display: flex;
   justify-content: center;
-  margin-bottom: 34px;
-  padding-bottom: 16px;
+  padding-bottom: 50px;
 }
 /* отступ у всех кнпопок кроме последней */
 .portfolio-nav .item:not(:last-child) {
@@ -330,11 +335,9 @@ body {
 }
 /* основные элементы страницы портфолио */
 .portfolio-list .item {
-  width: calc((100% - 2 * 30px) / 3);
+  flex-basis: calc((100% - 2 * 30px) / 3);
   margin-right: 30px;
   margin-bottom: 30px;
-  padding-bottom: 20px;
-  border: 1px solid #eeeeee;
 }
 /* каждому третьему убираем правый марджин */
 .portfolio-list .item:nth-child(3n) {
@@ -344,14 +347,18 @@ body {
 .portfolio-list .item:nth-last-child(-n + 3) {
   margin-bottom: 0;
 }
-/* уберем лишние пиксели внизу у картинок */
-.portfolio-list .link > img {
-  display: block;
+/* текстовая часть карточки */
+.card-content {
+  padding: 20px 24px;
+  border-right: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+  border-left: 1px solid #eeeeee;
 }
 /* заголовки элементов портфолио */
 .portfolio-list .title {
-  padding: 20px 24px 4px 24px;
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 4px;
+
   color: var(--main-text-color);
   font-size: 18px;
   line-height: 2;
@@ -359,24 +366,9 @@ body {
 }
 /* текст элементов портфолио */
 .portfolio-list .text {
-  padding: 0 24px;
   margin: 0;
 
   color: var(--second-text-color);
   font-size: 16px;
   line-height: 1.87;
-}
-
-/* Геометрия контейнера */
-.container {
-  width: 1200px;
-  margin: 0px auto;
-  padding: 0px 15px;
-  outline: 2px solid orange;
-}
-/* Временно уберем марджины у скрытых заголовка */
-.hidden {
-  display: none;
-  margin-top: 0;
-  margin-bottom: 0;
 }
