@@ -47,13 +47,9 @@ img {
   padding: 0px 15px;
   /* outline: 2px solid orange; */
 }
-/* весь хэдер в одну строку */
-.header-flex {
-  display: flex;
-  align-items: center;
-}
-/* логотип и навигацию в одну строку */
-.nav-flex {
+/* флексбокс хэдера */
+.header-flex,
+.nav-main {
   display: flex;
   align-items: center;
 }
@@ -67,12 +63,9 @@ img {
   line-height: 1.19;
   letter-spacing: 0.03em;
 }
-/* элементы навигации в строку */
-.nav-main {
-  display: flex;
-}
-/* отступ всем кроме последнего элепента навигации */
-.nav-main > .item:not(:last-child) {
+/* отступ всем кроме последнего элепента хэдера */
+.nav-main > .item:not(:last-child),
+.header-contacts .item:not(:last-child) {
   margin-right: 50px;
 }
 /* основная навигация хэдера */
@@ -83,38 +76,30 @@ img {
 
   color: inherit;
 }
-/* Выделение активной страницы хэдера + Web в логотипе */
+/* Цветовой акцент элементов */
 .nav-main .link.current,
 .header-logo .current,
-.footer-logo .current {
-  color: var(--accent-color);
-}
-/* цвет текста основной навигации при акценте*/
+.footer-logo .current,
 .nav-main .link:hover,
-.nav-main .link:focus {
+.nav-main .link:focus,
+.header-contacts .link:hover,
+.header-contacts .link:focus,
+.footer-contacts .link:hover,
+.footer-contacts .link:focus {
   color: var(--accent-color);
 }
-/* телефон и почту хэдера в строку */
-.header-info {
+/* контакты хэдера в строку */
+.header-contacts {
   display: flex;
   margin-left: auto;
 }
-/* отступ всем кроме последнего элемента списка header-info*/
-.header-info .item:not(:last-child) {
-  margin-right: 50px;
-}
-/* инфо часть навигации */
-.header-info .link {
+/* контакты хэдера */
+.header-contacts .link {
   display: block;
   padding-top: 32px;
   padding-bottom: 32px;
 
   color: var(--second-text-color);
-}
-/* цвет текста инфо части навигации при акценте */
-.header-info .link:hover,
-.header-info .link:focus {
-  color: var(--accent-color);
 }
 /* герой */
 .hero {
@@ -123,6 +108,10 @@ img {
 
   background-color: var(--third-bg-color);
   text-align: center;
+}
+.hero-container {
+  max-width: 696px;
+  margin: 0 auto;
 }
 /* Заголовок героя */
 .hero-title {
@@ -156,21 +145,25 @@ img {
   padding-top: 94px;
   padding-bottom: 0;
 }
-/* Временно cпрячем и уберем марджины у скрытых заголовка */
+/* Временно cпрячем скрытые заголовки */
 .hidden {
   display: none;
   margin: 0;
 }
-/* список преимуществ в строку */
-.feature-list {
+/* флексбокс */
+.feature-list,
+.examples-list,
+.team-list {
   display: flex;
 }
-/* наполнение контейнера преимуществ */
+/* ширина элементов секции Преимущества */
 .feature-list .item {
   flex-basis: calc((100% - 3 * 30px) / 4);
 }
-/* отступы всем кроме последнего элемента списка перимуществ */
-.feature-list .item:not(:last-child) {
+/* отступы всем кроме последнего элемента списков */
+.feature-list .item:not(:last-child),
+.examples-list .item:not(:last-child),
+.team-list .item:not(:last-child) {
   margin-right: 30px;
 }
 /* Заголовки h3 секции преимущества */
@@ -203,26 +196,14 @@ img {
   line-height: 1.17;
   text-align: center;
 }
-/* список примеров работ в строку */
-.examples-list {
-  display: flex;
-}
 /* ширина контента секкции */
 .examples-list .item {
   flex-basis: calc((100% - 2 * 30px) / 3);
-}
-/* отступы всем проме последнего элемента списка */
-.examples-list .item:not(:last-child) {
-  margin-right: 30px;
 }
 /* оформление секции команда  */
 .section.team {
   background-color: var(--secohd-bg-color);
   text-align: center;
-}
-/* список команды */
-.team-list {
-  display: flex;
 }
 /* элементы списка наша команда */
 .team-list .item {
@@ -231,10 +212,6 @@ img {
   border-radius: 0px 0px 4px 4px;
 
   background-color: var(--main-bg-color);
-}
-/*отступ всем кроме последнего элемента списка */
-.team-list .item:not(:last-child) {
-  margin-right: 30px;
 }
 /* Заголовки h3 Наша команда */
 .team-list .title {
@@ -261,6 +238,9 @@ img {
 
   background-color: var(--third-bg-color);
 }
+.footer-address {
+  width: 270px;
+}
 /* лого футера */
 .footer-logo {
   color: var(--main-bg-color);
@@ -270,28 +250,23 @@ img {
   line-height: 1.19;
 }
 /* адрес футера */
-.footer-address {
+.footer-contacts {
   margin-top: 20px;
 
   font-style: normal;
 }
 /* Физический адрес в футере */
-.footer-address .text {
+.footer-contacts .text {
   margin: 0;
 
   color: var(--main-bg-color);
 }
 /* почта и телефон футера */
-.footer-address .link {
+.footer-contacts .link {
   display: inline-block;
   margin-top: 9px;
 
   color: rgba(255, 255, 255, 0.6);
-}
-/* акцент для почты и телефона в футере */
-.footer-address .link:hover,
-.footer-address .link:focus {
-  color: var(--accent-color);
 }
 
 /* Страница Портфолио */
