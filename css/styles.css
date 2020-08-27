@@ -32,6 +32,17 @@ img {
   margin: 0;
   list-style: none;
 }
+/* cпрячем скрытые заголовки */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
 
 /* страница Студия */
 /* задам общие настройки шрифта хэдера */
@@ -107,11 +118,11 @@ img {
   padding-bottom: 200px;
 
   background-color: var(--third-bg-color);
-  text-align: center;
 }
 .hero-container {
-  max-width: 696px;
+  max-width: 770px;
   margin: 0 auto;
+  text-align: center;
 }
 /* Заголовок героя */
 .hero-title {
@@ -144,11 +155,6 @@ img {
 .section.feature {
   padding-top: 94px;
   padding-bottom: 0;
-}
-/* Временно cпрячем скрытые заголовки */
-.hidden {
-  display: none;
-  margin: 0;
 }
 /* флексбокс */
 .feature-list,
@@ -208,7 +214,6 @@ img {
 /* элементы списка наша команда */
 .team-list .item {
   flex-basis: calc((100% - 3 * 30px) / 4);
-  padding-bottom: 30px;
   border-radius: 0px 0px 4px 4px;
 
   background-color: var(--main-bg-color);
@@ -225,7 +230,7 @@ img {
 /* Текст секции Наша команда */
 .team-list .text {
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 30px;
 
   color: var(--second-text-color);
   font-size: 16px;
@@ -275,7 +280,7 @@ img {
 .portfolio-nav {
   display: flex;
   justify-content: center;
-  padding-bottom: 50px;
+  margin-bottom: 50px;
 }
 /* отступ у всех кнпопок кроме последней */
 .portfolio-nav .item:not(:last-child) {
